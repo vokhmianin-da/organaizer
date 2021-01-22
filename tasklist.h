@@ -6,26 +6,28 @@
 #include <QFile>
 #include <QTextStream>
 
-class taskList: public QObject
+class TaskList: public QObject
 {
     Q_OBJECT
-//    Q_PROPERTY(int input WRITE setInput READ getInput NOTIFY inputValueChanged)
+    Q_PROPERTY(QString taskString WRITE writeTask READ getTaskString)
 //    Q_PROPERTY(int result READ getResult NOTIFY resultValueChanged)
 public:
-    taskList();
+    TaskList();
 //    Q_INVOKABLE int factorial(const int& n);
 
 //    int getInput() const;
 //    void setInput(int value);
 //    int getResult() const;
+    void writeTask(QString str);
+    QString getTaskString();
 
 //signals:
 //    void inputValueChanged(int);
 //    void resultValueChanged(int);
 
 private:
-    int input;
-    int result;
+//    int input;
+//    int result;
     QString taskString;
 };
 
