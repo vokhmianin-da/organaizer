@@ -8,4 +8,7 @@
         <file>1button.png</file>
         <file>2button.png</file>
     </qresource>
+    <qresource prefix="/new/text">
+        <file>organaizer.txt</file>
+    </qresource>
 </RCC>
