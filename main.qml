@@ -53,19 +53,17 @@ Window {
             font.pixelSize: 12
         }
 
-        TextEdit {
+        TextField {
             id: _nameTask
             x: 25
             y: 38
             width: 163
             height: 20
-            color: "#000000"
             text: qsTr("")
-            selectionColor: "#00000000"
             font.pixelSize: 12
         }
 
-        TextEdit {
+        TextField {
             id: _endDate
             x: 25
             y: 96
@@ -73,6 +71,7 @@ Window {
             height: 20
             text: qsTr("")
             font.pixelSize: 12
+            validator: RegExpValidator {regExp: /^([0-2][0-9]|[3][0-1])[.]([0][1-9]|[1][0-2])[.]([0-2][0-9][0-9][0-9])$ /}
         }
 
         Text {
