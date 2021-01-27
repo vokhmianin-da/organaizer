@@ -45,6 +45,7 @@ Window {
             font.pixelSize: 12
         }
 
+
         Text {
             id: text1
             x: 60
@@ -54,6 +55,26 @@ Window {
             text: qsTr("Название задачи")
             font.pixelSize: 12
         }
+
+        Text {
+            id: textQuant
+            x: text1.x + 300
+            y: 15
+            width: 93
+            height: 17
+            text: qsTr("Количество задач: ") +_taskList.quantityTasks
+            font.pixelSize: 12
+        }
+
+//        Text {
+//            id: _quantityTasks
+//            x: textQuant.x + textQuant.width + 30
+//            y: textQuant.y
+//            width: 61
+//            height: 14
+//            font.pixelSize: 12
+//            text: "1"
+//        }
 
         TextField {
             id: _nameTask

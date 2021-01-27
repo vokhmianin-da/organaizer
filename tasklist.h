@@ -10,6 +10,7 @@ class TaskList: public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString taskString WRITE writeTask READ getTaskString)
+    Q_PROPERTY(QString quantityTasks READ getTasksQuantity)
 //    Q_PROPERTY(int result READ getResult NOTIFY resultValueChanged)
 public:
     TaskList();
@@ -20,6 +21,7 @@ public:
 //    int getResult() const;
     void writeTask(QString str);
     QString getTaskString();
+    Q_INVOKABLE QString getTasksQuantity();
 
 //signals:
 //    void inputValueChanged(int);
@@ -29,6 +31,8 @@ private:
 //    int input;
 //    int result;
     QString taskString;
+    QString tasks;
+    QString quantityTasks;
 };
 
 #endif // TASKLIST_H
