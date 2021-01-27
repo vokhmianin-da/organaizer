@@ -28,7 +28,9 @@ Window {
             width: 134
             height: 81
             text: "Записать"
-            onClicked: _taskList.taskString = _nameTask.text + "; " + _endDate.text + "; " + _progress.text
+            onClicked: if(_nameTask.text) {_taskList.taskString = _nameTask.text + "; " + _endDate.text + "; " + _progress.text
+                           _statusBar.text = "Успех"}
+            else _statusBar.text = "Введите название задачи"
         }
 
         Text {
