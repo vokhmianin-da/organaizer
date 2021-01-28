@@ -29,7 +29,8 @@ Window {
             height: 81
             text: "Записать"
             onClicked: if(_nameTask.text) {_taskList.taskString = _nameTask.text + "; " + _endDate.text + "; " + _progress.text
-                           _statusBar.text = "Успех"}
+                           _statusBar.text = "Успех"
+                       textQuant.text = qsTr("Количество задач: ") + _taskList.quantityTasks}
             else _statusBar.text = "Введите название задачи"
         }
 
