@@ -28,10 +28,11 @@ Window {
             width: 134
             height: 81
             text: "Записать"
-            onClicked: if(_nameTask.text) {_taskList.taskString = _nameTask.text + "; " + _endDate.text + "; " + _progress.text
+            onClicked: if(_nameTask.text && _endDate.text.length == 10) {_taskList.taskString = _nameTask.text + "; " + _endDate.text + "; " + _progress.text
                            _statusBar.text = "Успех"
                        textQuant.text = qsTr("Количество задач: ") + _taskList.quantityTasks}
-            else _statusBar.text = "Введите название задачи"
+            else if(!_nameTask.text) _statusBar.text = "Введите название задачи"
+            else _statusBar.text = "Неверный формат даты"
         }
 
         Text {

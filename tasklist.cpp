@@ -33,7 +33,7 @@ QString TaskList::getTaskString()
 
 QString TaskList::getTasksQuantity()
 {
-    int x = 0;
+    int x = -1;
     int count = 0;
     QFile file("organaizer.txt");
     if (file.open(QFile::ReadOnly))
@@ -42,13 +42,13 @@ QString TaskList::getTasksQuantity()
         tasks = stream.readAll();
         file.close();
     }
-    while(x != -1)
+    do
     {
         x = tasks.indexOf("\n", x+1);
         if(x != -1)
         {
             count++;
         }
-    }
+    } while(x != -1);
     return QString::number(count);
 }
