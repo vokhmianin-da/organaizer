@@ -28,7 +28,11 @@ Window {
             width: 134
             height: 81
             text: "Записать"
-            onClicked: if(_nameTask.text && _endDate.text.length == 10) {_taskList.taskString = _nameTask.text + "; " + _endDate.text + "; " + _progress.text
+            onClicked: if(_nameTask.text && _endDate.text.length == 10) {//_taskList.taskString = _nameTask.text + "; " + _endDate.text + "; " + _progress.text
+                           _taskList.taskName = _nameTask.text
+                           _taskList.taskDateEnd = _endDate.text
+                           _taskList.taskProgress = _progress.text
+                           _taskList.writeStringToBD()
                            _statusBar.text = "Успех"
                        textQuant.text = qsTr("Количество задач: ") + _taskList.quantityTasks}
             else if(!_nameTask.text) _statusBar.text = "Введите название задачи"
