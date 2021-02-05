@@ -15,6 +15,11 @@ TaskList::TaskList()
     {
         qDebug() << "Таблица уже создана";
     }
+    table = new QTableView;
+    model = new QSqlQueryModel;
+    model->setQuery("SELECT * FROM tasks;");
+    table->setModel(model);
+    table->resize(400, 500);
 }
 
 void TaskList::writeTaskName(QString str)
@@ -47,25 +52,6 @@ QString TaskList::getTaskProgress()
     return taskProgress;
 }
 
-//void TaskList::writeTask(QString str)
-//{
-//    QFile file("organaizer.txt");
-//    taskString += str;
-
-//    if (file.open(QFile::Append))
-//    {
-//        QTextStream stream(&file);
-//        stream << "\n" << taskString;
-//        taskString.clear();
-//        file.close();
-//    }
-//}
-
-//QString TaskList::getTaskString()
-//{
-//    return taskString;
-//}
-
 QString TaskList::getTasksQuantity()
 {
     int count = 0;
@@ -88,6 +74,12 @@ void TaskList::writeStringToBD()
             qDebug() << "Не удалось вставить запись";
         }
 
+}
+
+void TaskList::showTable()
+{
+    model->setQuery("SELECT * FROM tasks;");
+    table->show();
 }
 
 bool TaskList::createConnection()

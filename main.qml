@@ -25,8 +25,8 @@ Window {
             id: myButton1
             x: 40
             y: 217
-            width: 134
-            height: 81
+            width: 200
+            height: 120
             text: "Записать"
             onClicked: if(_nameTask.text && _endDate.text.length == 10) {//_taskList.taskString = _nameTask.text + "; " + _endDate.text + "; " + _progress.text
                            _taskList.taskName = _nameTask.text
@@ -37,6 +37,16 @@ Window {
                        textQuant.text = qsTr("Количество задач: ") + _taskList.quantityTasks}
             else if(!_nameTask.text) _statusBar.text = "Введите название задачи"
             else _statusBar.text = "Неверный формат даты"
+        }
+
+        MyButton {
+            id: myButton2
+            x: myButton1.x + myButton1.width + 30
+            y: 217
+            width: 200
+            height: 120
+            text: "Показать таблицу"
+            onClicked: _taskList.showTable()
         }
 
         Text {
@@ -71,16 +81,6 @@ Window {
             text: qsTr("Количество задач: ") +_taskList.quantityTasks
             font.pixelSize: 12
         }
-
-//        Text {
-//            id: _quantityTasks
-//            x: textQuant.x + textQuant.width + 30
-//            y: textQuant.y
-//            width: 61
-//            height: 14
-//            font.pixelSize: 12
-//            text: "1"
-//        }
 
         TextField {
             id: _nameTask
