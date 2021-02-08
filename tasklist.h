@@ -36,11 +36,10 @@ public:
 
 private:
 
-    QString taskName;
-    QString taskDateEnd;
-    QString taskProgress;
-    QString tasks;
-    QString quantityTasks;
+    QString taskName;   //название задачи
+    QString taskDateEnd;    //дата окончания
+    QString taskProgress;   //прогресс
+    QString quantityTasks;  //количество задач
     QSqlDatabase db;
     QTableView* table;
     QSqlQueryModel* model;
