@@ -8,9 +8,9 @@ TaskList::TaskList()
     QSqlQuery query;
     QString strQuery = "CREATE TABLE tasks ("
                        "id INTEGER PRIMARY KEY NOT NULL,"
-            "nameTask TEXT,"
-            "dateBegin TEXT,"
-            "progress TEXT);";
+            "'Название задачи' TEXT,"
+            "'Дата начала' TEXT,"
+            "'Прогресс' TEXT);";
     if(!query.exec(strQuery))
     {
         qDebug() << "Таблица уже создана";
@@ -67,7 +67,7 @@ void TaskList::writeStringToBD()
     QSqlQuery query;
     QString strQuery;
 
-    QString strF = "INSERT INTO tasks (nameTask, dateBegin, progress)"
+    QString strF = "INSERT INTO tasks ('Название задачи', 'Дата начала', 'Прогресс')"
                    "VALUES('%1', '%2', '%3');";
     strQuery = strF.arg(taskName).arg(taskDateEnd).arg(taskProgress);
     if (!query.exec(strQuery)){
