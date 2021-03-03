@@ -9,6 +9,8 @@ Window {
     width: 640
     height: 480
     title: qsTr("Organaizer")
+    minimumHeight: 480
+    minimumWidth: 640
 
     TaskList{
         id: _taskList

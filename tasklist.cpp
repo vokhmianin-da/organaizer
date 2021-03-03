@@ -19,7 +19,9 @@ TaskList::TaskList()
     model = new QSqlQueryModel;
     model->setQuery("SELECT * FROM tasks;");
     table->setModel(model);
-    table->resize(400, 500);
+    //table->resize(400, 500);
+    table->setMinimumHeight(100);
+    table->setMinimumWidth(402);
 }
 
 void TaskList::writeTaskName(QString str)
