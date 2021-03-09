@@ -9,8 +9,10 @@ Window {
     width: 640
     height: 480
     title: qsTr("Organaizer")
-    minimumHeight: 480
-    minimumWidth: 640
+    minimumWidth: 600
+    minimumHeight: 400
+    maximumWidth: 600
+    maximumHeight: 400
 
     TaskList{
         id: _taskList
@@ -25,7 +27,7 @@ Window {
 
         MyButton {
             id: myButton1
-            x: 40
+            x: parent + width + 50
             y: 217
             width: 200
             height: 120
@@ -43,7 +45,7 @@ Window {
 
         MyButton {
             id: myButton2
-            x: myButton1.x + myButton1.width + 30
+            x: parent.width - width - 50
             y: 217
             width: 200
             height: 120
@@ -76,7 +78,7 @@ Window {
 
         Text {
             id: textQuant
-            x: text1.x + 300
+            x: parent.width - myButton2.width
             y: 15
             width: 93
             height: 17
